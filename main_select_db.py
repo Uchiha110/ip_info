@@ -2,9 +2,9 @@ from pyfiglet import Figlet
 import keyboard
 
 from select_person_db import select_person_db_func
-# from write_html_map import write_html_map_func
+from write_html_map import write_html_map_func
 from write_json_file import write_json_file_func
-# from write_exel_table import write_exel_table_func
+from write_exel_table import write_exel_table_func
 from date_time_name_file import date_time_func, name_file_func
 
 
@@ -20,9 +20,9 @@ def main_select_db():
         date = input("Enter the search information in the column above: ")
 
         name_file_one = name_file_func(select_person_db_func(column_name=column_name, date=date, oneall=oneall), date_time_func())
-        # write_html_map_func(name_file_one, select_person_db_func(column_name=column_name, date=date, oneall=oneall), oneall)
+        write_html_map_func(name_file_one, select_person_db_func(column_name=column_name, date=date, oneall=oneall), oneall)
         write_json_file_func(name_file_one, select_person_db_func(column_name=column_name, date=date, oneall=oneall), oneall)
-        # write_exel_table_func(name_file_one, select_person_db_func(column_name=column_name, date=date, oneall=oneall), oneall)
+        write_exel_table_func(name_file_one, select_person_db_func(column_name=column_name, date=date, oneall=oneall), oneall)
 
         print(select_person_db_func(column_name=column_name, date=date, oneall=oneall))
     elif oneall.lower() == 'all':
